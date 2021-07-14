@@ -17,6 +17,12 @@ class Menubar(tk.Menu):
         master.bind_all("<Control-N>", master.on_window_new)
         file.add_command(command=master.on_open, label="開く(O)...", underline=3, accelerator="Ctrl+O")
         master.bind_all("<Control-o>", master.on_open)
+        file.add_command(command=master.on_save, label="上書き保存(S)", underline=6, accelerator="Ctrl+S")
+        master.bind_all("<Control-s>", master.on_save)
+        file.add_command(command=master.on_save_as, label="名前を付けて保存(A)...", underline=9, 
+                         accelerator="Ctrl+Shift+S")
+        master.bind_all("<Control-S>", master.on_save_as)
+
 
 def main():
     print("メニューバーを定義するモジュールです。")
